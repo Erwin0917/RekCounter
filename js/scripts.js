@@ -11,13 +11,21 @@
             currTime = timeInSec,
             $counter = $(".timer_left_time");
 
-        if (val < 0) { val = 0; }
-        if (val > 100) { cal = 100;}
 
-        $circle.css("opacity", 1);
+        console.log($circle.css("opacity"))
+        if( $circle.css("opacity") == 0){
+            $circle.css("opacity", 1);
+        }     
+       
 
         let interval = setInterval(function () {
-            
+            if (val  >= 100) {
+                clearInterval(interval);
+                val = 100;
+                $counter.css("opacity", 0);  
+                return;   
+            }
+
             let pct = ((100 - val) / 100) * c,
             minutes = Math.floor(currTime / 60);
             sec = currTime % 60 ;
@@ -26,12 +34,7 @@
 
             $('.timer').attr('data-pct', val);
 
-            if (val  >= 100) {
-                clearInterval(interval);
-                $counter.css("opacity", 0);     
-            }
-
-            val= val + (100 / timeInSec );
+            val= val + (100 / timeInSec );    
             currTime--;
 
             if(minutes < 10 ) minutes = `0${minutes}`;
@@ -44,7 +47,7 @@
 
         
     }
-    timer(120);
+    timer(30);
 
 
 })();
