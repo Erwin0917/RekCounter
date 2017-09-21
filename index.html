@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GameKit</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">  
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <main class="timer_wrapper">
+        <h2 class="timer_text">Wszystkie miejsca zostały zajęte. Rozstrzygnięcie konkursu za: </h2>
+        <div class="timer" data-pct="0" >
+                <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <circle r="70" cx="100" cy="100" fill="transparent" stroke-dasharray="440"  stroke-dashoffset="0"></circle>
+                    <circle id="bar" r="70" cx="100" cy="100" fill="transparent" stroke-dasharray="440"  stroke-dashoffset="440"></circle>
+                       
+                </svg>
+                <span class="timer_left_time"></span>  
+        </div>
+    </main>
+    
+
+
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   
+    <script src="js/scripts.js"></script>
+</body>
+</html>
